@@ -1,0 +1,171 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    max-width: 90%; /* Ensure the paragraph doesn't exceed 90% of the container width */
+    margin: 10px auto; /* Center the paragraph and add vertical margin */
+    text-align: center; /* Optionally center the text */
+    padding: 0 20px; /* Add some padding on the left and right */
+}
+
+#waste-image {
+    max-height: 30vh;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#game-container {
+    width: 1024px;
+    height: 768px;
+    background-image: url(images/HomeBG.png);
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.flicker {
+    animation: flicker 0.8s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+
+
+#timer, #score {
+    position: absolute;
+    top: 20px;
+    font-size: 24px;
+}
+
+#timer {
+    top: 10%;
+    left: 10%;
+    font-weight: bold;
+    color: white;
+}
+
+
+#score {
+    top: 10%;
+    right: 10%;
+    font-weight: bold;
+}
+
+#go-back {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#go-back.hidden {
+    display: none;
+}
+
+/* Styling buttons inside #game-screen specifically */
+#game-screen .option {
+    width: 140px; /* Set a fixed width for the button */
+    height: 140px; /* Set a fixed height to maintain the circle shape */
+    border-radius: 50%; /* Make the button round */
+    border: none; /* Remove any default border */
+    display: flex;
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    font-size: 16px; /* Adjust font size */
+    font-family: 'Press Start 2P', sans-serif;
+    color: white; /* Text color */
+    margin: 20px; /* Add space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 0; /* No extra padding, we already control the size with width/height */
+    box-sizing: border-box; /* Ensure padding is included in the button size */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Position the buttons in a row and ensure they take up 70% of the game container width */
+#game-screen #options {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons evenly */
+    width: 100%; /* Buttons will occupy 70% of the game container width (1024px) */
+    margin: auto; /* Center the button container */
+    flex-wrap: nowrap; /* Prevent the buttons from wrapping to a new line */
+}
+
+/* Assigning different colors to the buttons inside #game-screen */
+#game-screen .option[data-type="organic"] {
+    background-color: green; /* LimeGreen */
+}
+
+#game-screen .option[data-type="plastic"] {
+    background-color: orange; /* SteelBlue */
+}
+
+#game-screen .option[data-type="paper"] {
+    background-color: blue; /* Tomato */
+}
+
+#game-screen .option[data-type="residual"] {
+    background-color: grey; /* Gold */
+}
+
+/* Hover effect for the buttons inside #game-screen */
+#game-screen .option:hover {
+    background-color: #555; /* Change color on hover */
+}
+
+/* Flash red effect for the full screen */
+.flash-red {
+    animation: flashRed 0.3s ease-in-out;
+}
+
+@keyframes flashRed {
+    0% { background-color: red; }
+    100% { background-color: transparent; }
+}
+
+/* Blinking effect for the timer in the last 10 seconds */
+.flicker-fast {
+    animation: flickerFast 0.15s infinite alternate;
+}
+
+@keyframes flickerFast {
+    0% { color: red; }
+    100% { color: white; }
+}
+
+/* Make the correct answer blink green */
+.correct-blink {
+    animation: blinkGreen 3s infinite alternate;
+}
+
+@keyframes blinkGreen {
+    0% { background-color: greenyellow; }
+    100% { background-color: transparent; }
+}

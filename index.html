@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Invaders</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <button id="go-back" class="hidden">Go Back</button>
+
+        <!-- START SCREEN -->
+        <div id="start-screen">
+            <h1>WASTE INVADERS</h1>
+            <p class="flicker">Push any button to start</p>
+        </div>
+
+        <!-- WHY SEPARATE SCREEN -->
+        <div id="why-separate" class="hidden">
+            <h1>WHY SEPARATE?</h1>
+            <p>To reach the set goal to reduce residual waste by 2030 with 50%.</p>
+            <p>Currently we’re not doing great..</p>
+            <p class="flicker">Push any button to continue</p>
+        </div>
+
+        <!-- BUT FEAR NOT SCREEN -->
+        <div id="but-fear-not" class="hidden">
+            <h1>TOGETHER WE CAN CHANGE THAT!</h1>
+            <p>It’s not too late!</p>
+            <p>First let's learn how to bin your waste right!</p>
+            <p class="flicker">Push any button to continue</p>
+        </div>
+
+        <!-- HOW TO PLAY SCREEN -->
+        <div id="how-to-play" class="hidden">
+            <h1>HOW TO PLAY</h1>
+            <p>Click on the correct waste stream corresponding to the waste you see.</p>
+            <p>Get as many right within 40s and test your knowledge!</p>
+            <p class="flicker">Push any button to start</p>
+        </div>
+
+        <!-- GAME SCREEN -->
+        <div id="game-screen" class="hidden">
+            <p id="timer">Time Left: 10</p>
+            <p id="score">Score: 0</p>
+
+            
+            <div id="item-container">
+                <!-- Image and Title Section -->
+
+                <p id="image-title"></p> <!-- This will hold the title -->
+    
+                <img id="waste-image" src="" alt="Waste Item">
+                <div id="options">
+                    <button class="option" data-type="organic">Organic</button>
+                    <button class="option" data-type="plastic">Plastic</button>
+                    <button class="option" data-type="paper">Paper</button>
+                    <button class="option" data-type="residual">Residual</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- GAME OVER SCREEN -->
+        <div id="game-over" class="hidden">
+            <h1>GAME OVER</h1>
+            <div id="high-scores"></div>
+            <p class="flicker">Click anywhere to return to home</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
